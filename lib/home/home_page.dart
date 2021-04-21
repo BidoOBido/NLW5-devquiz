@@ -13,6 +13,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    double cardWidth = MediaQuery.of(context).size.width / 2;
+    double cardHeight = MediaQuery.of(context).size.height / 3.5;
+
     return Scaffold(
       appBar: AppBarWidget(),
       body: Padding(
@@ -44,6 +47,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
                 crossAxisCount: 2,
+                childAspectRatio: cardWidth / cardHeight,
                 children: [
                   QuizCardWidget(),
                   QuizCardWidget(),
