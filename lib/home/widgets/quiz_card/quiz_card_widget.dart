@@ -9,6 +9,9 @@ class QuizCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double spaceBetween = screenHeight * 0.02;
+
     return Container(
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -27,14 +30,14 @@ class QuizCardWidget extends StatelessWidget {
             height: 40,
           ),
           SizedBox(
-            height: 24,
+            height: spaceBetween,
           ),
           Text(
             "Gerenciamento de estado",
             style: AppTextStyles.heading15,
           ),
           SizedBox(
-            height: 24,
+            height: spaceBetween,
           ),
           Row(
             children: [

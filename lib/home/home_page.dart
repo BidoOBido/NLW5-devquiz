@@ -13,8 +13,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    double cardWidth = MediaQuery.of(context).size.width / 2;
-    double cardHeight = MediaQuery.of(context).size.height / 3.5;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    double cardWidth = screenWidth / 2;
+    double cardHeight = screenHeight / 3.5;
+
+    double spaceBetween = screenHeight * 0.02;
 
     return Scaffold(
       appBar: AppBarWidget(),
@@ -22,25 +27,28 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                LevelButtonWidget(
-                  label: "Fácil",
-                ),
-                LevelButtonWidget(
-                  label: "Médio",
-                ),
-                LevelButtonWidget(
-                  label: "Difícil",
-                ),
-                LevelButtonWidget(
-                  label: "Perito",
-                ),
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  LevelButtonWidget(
+                    label: "Fácil",
+                  ),
+                  LevelButtonWidget(
+                    label: "Médio",
+                  ),
+                  LevelButtonWidget(
+                    label: "Difícil",
+                  ),
+                  LevelButtonWidget(
+                    label: "Perito",
+                  ),
+                ],
+              ),
             ),
             SizedBox(
-              height: 24,
+              height: spaceBetween,
             ),
             Expanded(
               child: GridView.count(
