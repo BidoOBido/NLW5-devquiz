@@ -9,13 +9,15 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   google_fonts: ^2.0.0
+  share_plus: ^2.0.1
 
-dev_dependencies:
+dev_dependencies: 
   flutter_test:
     sdk: flutter
 
 flutter:
   assets:
     - assets/images/
+    - assets/database/
 
   uses-material-design: true
